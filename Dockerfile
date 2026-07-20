@@ -3,6 +3,11 @@
 # 使用包含 uv 的官方镜像作为基础
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
 
+# 设置时区为北京时间
+ENV TZ=Asia/Shanghai
+RUN apt-get update && apt-get install -y --no-install-recommends tzdata && rm -rf /var/lib/apt/lists/*
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # 设置工作目录
 WORKDIR /app
 
