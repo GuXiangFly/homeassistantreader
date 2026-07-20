@@ -1,1 +1,1 @@
-## 一个能将 homeassistant 的 sensor同步到  postgresql，并且使用grafana 展示阮居
+## 一个能将 homeassistant 的 sensor同步到  postgresql，并且使用grafana 展示的软件
