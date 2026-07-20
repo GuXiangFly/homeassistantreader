@@ -1,7 +1,3 @@
-# 帮我写一个代码,能 链接postgresql数据库
-# url是 jdbc:postgresql://192.168.31.109:5432/postgres    username: teslamate     password: password
-# 帮我设计一个postgresql的表, 这个表, 表的字段有metricTime 当前的datetime时间,   有 senior_name,   有 senior_value
-
 -- 传感器指标表
 CREATE TABLE IF NOT EXISTS sensor_metrics (
     id              BIGSERIAL PRIMARY KEY,
