@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Optional
 
 import psycopg2
-from psycopg2.extras import RealDictCursor
+from psycopg2.extras import RealDictCursor, execute_values
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -71,6 +71,18 @@ class HomeAssistantPgsqlDao:
         """
         with self._get_cursor() as cur:
             cur.execute(sql, (metric_time, sensor_name, sensor_value))
+
+    def insert_metrics_batch(
+        self,
+        records: list[tuple[datetime, str, float]],
+    ) -> None:
+        """批量插入传感器指标记录."""
+        sql = """
+        INSERT INTO sensor_metrics (metric_time, sensor_name, sensor_value)
+        VALUES %s
+        """
+        with self._get_cursor() as cur:
+            execute_values(cur, sql, records)
 
     def get_latest_metric(self, sensor_name: str) -> Optional[dict]:
         """获取指定传感器的最新一条记录."""
