@@ -110,12 +110,13 @@ CREATE INDEX idx_sensor_metrics_name_time ON sensor_metrics(sensor_name, metric_
 
 ```sql
 SELECT
-  metric_time AS time,
-  sensor_name AS metric,
-  sensor_value AS value
-FROM sensor_metrics
-WHERE sensor_name = 'sensor.iot_cn_2047343303_padw2p_electric_power_p_3_3'
-ORDER BY metric_time
+	$__timeGroup(metric_time, '5s'),
+max(sensor_value) 
+ FROM sensor_metrics
+ WHERE $__timeFilter(metric_time)
+ and sensor_name = 'sensor.iot_cn_2047343303_padw2p_electric_power_p_3_3'
+ GROUP BY  1
+ order by 1 asc
 ```
 
 ## 📝 日志说明
