@@ -136,6 +136,12 @@ ORDER BY metric_time
 
 > 如需采集其他传感器，请修改 `src/service/homeassistant_reader_service.py` 中的 `entity_id_list`。
 
+## 📸 效果展示
+
+![Grafana 效果展示](imgs/grafana_img01.jpg)
+
+![Grafana 效果展示](imgs/grafana_img02.jpg)
+
 ## 📁 项目结构
 
 ```
