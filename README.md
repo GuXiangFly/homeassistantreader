@@ -37,7 +37,15 @@ cp .env.example .env
 | `PG_USER` | 否 | `teslamate` | 数据库用户名 |
 | `PG_PASSWORD` | 否 | `password` | 数据库密码 |
 
-> 💡 **获取 HA_TOKEN**：在 Home Assistant 中进入「个人资料」→ 页面底部「长期访问令牌」→ 创建令牌。
+> 💡 **获取 HA_TOKEN（Long-Lived Access Token）的方法**：
+>
+> 1. 进入 **Home Assistant**
+> 2. 点击左下角**用户头像**
+> 3. 进入 **Security** 标签页
+> 4. 下滑至 **Long-lived access tokens**，点击 **Create Token**
+> 5. 填写名称后点击 **OK**，复制生成的 Token
+>
+> 示例：`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
 
 ## 🚀 快速开始
 
