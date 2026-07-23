@@ -32,10 +32,10 @@ cp .env.example .env
 | `HA_URL` | 是 | `http://192.168.31.222:8123` | Home Assistant 地址 |
 | `HA_TOKEN` | 是 | - | Home Assistant 长期访问令牌（Long-Lived Access Token） |
 | `PG_HOST` | 是 | `192.168.31.109` | PostgreSQL 主机地址 |
-| `PG_PORT` | 否 | `5432` | PostgreSQL 端口 |
-| `PG_DBNAME` | 否 | `homeassistant_reader_db` | 数据库名称 |
-| `PG_USER` | 否 | `teslamate` | 数据库用户名 |
-| `PG_PASSWORD` | 否 | `password` | 数据库密码 |
+| `PG_PORT` | 是 | `5432` | PostgreSQL 端口 |
+| `PG_DBNAME` | 是 | `homeassistant_reader_db` | 数据库名称 |
+| `PG_USER` | 是 | `teslamate` | 数据库用户名 |
+| `PG_PASSWORD` | 是 | `password` | 数据库密码 |
 
 > 💡 **获取 HA_TOKEN（Long-Lived Access Token）的方法**：
 >
