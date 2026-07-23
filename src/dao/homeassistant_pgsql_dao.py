@@ -18,8 +18,8 @@ class HomeAssistantPgsqlDao:
             "host": os.getenv("PG_HOST", "192.168.31.109"),
             "port": os.getenv("PG_PORT", "5432"),
             "dbname": os.getenv("PG_DBNAME", "homeassistant_reader_db"),
-            "user": os.getenv("PG_USER", "teslamate"),
-            "password": os.getenv("PG_PASSWORD", "password"),
+            "user": os.getenv("PG_USER", ""),
+            "password": os.getenv("PG_PASSWORD", ""),
         }
 
     @contextmanager
